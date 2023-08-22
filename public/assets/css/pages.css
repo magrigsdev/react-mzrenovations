@@ -1,0 +1,33 @@
+
+.home_hero   .active {
+    background-image: url("../img/background/backgroud1.jpg");
+}
+.home_hero   .item2{
+    background-image: url("../img/background/backgroud2.jpg");
+}
+.home_hero   .item3{
+    background-image: url("../img/background/backgroud3.jpg");
+}
+.home_hero   .item4{
+    background-image: url("../img/background/backgroud4.jpg");
+} 
+.home_hero   .item5{
+    background-image: url("../img/background/backgroud5.jpg");
+}
+
+ /* home section  */
+.Home_section  .card-item .mur{
+    background-image: url("../img/constructions-mur.jpg");
+}
+.Home_section  .card-item .fenetre{
+    background-image: url("../img/constructions-fentre.jpg");
+} 
+.Home_section  .card-item .toiture{
+    background-image: url("../img/constructions-toiture.jpg");
+}  
+
+.home_services .img-bg{
+    background-image: url("../img/background/backgroud3.jpg");
+}
+
+.home-travaux .margintop{margin-top: 10px;}
