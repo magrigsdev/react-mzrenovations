@@ -1,29 +1,40 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-function Navbar() {
-  return (
-    <>
-      <header id="header" class="header d-flex align-items-center">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-    <a href="#" class="logo d-flex align-items-center">
+class Navbar extends Component {
+
+  render(){
+    //get 
+    const {CurrentPage} = this.props
+   
+   
+    return (
+      
+      <>
+      <header id="header" className="header d-flex align-items-center">
+    <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+    <a href="#" className="logo d-flex align-items-center">
       {/* Uncomment the line below if you also wish to use an image logo  */}
         {/* {{-- <!-- <img src="{{asset('assets/img/logo.png')}}" alt=""> --> --}} */}
         <h1>MZ<span>renovation</span></h1>
     </a>
 
-    <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-    <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-    <nav id="navbar" class="navbar">
+    <i className="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+    <i className="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    <nav id="navbar" className="navbar">
+      {/* Accueil */}
         <ul>
-        <li><a href=""  class="active">Accueil</a></li>
-        <li><a href="" class="">Travaux</a></li>
+        <li><a href=""  className={`navbar ${CurrentPage ? 'active':''}`}> Accueil</a></li>
+
+
+        <li><a href="" className="{`navbar ${CurrentPage ? 'active':''}`}">Travaux</a></li>
         
         
-        <li><a href="" class="">isolation</a></li>
+        <li><a href="" className="">isolation</a></li>
           
-            <li class="dropdown" ><a href="#"><span>Isolation</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-              <ul class="list_isolations">
+            <li className="dropdown" ><a href="#"><span>Isolation</span> <i className="bi bi-chevron-down dropdown-indicator"></i></a>
+              <ul className="list_isolations">
 
               <li><a href="">Murs</a></li>           
               <li><a href="">Fenètres</a></li>
@@ -33,19 +44,19 @@ function Navbar() {
             </li>
         
 
-        <li><a href="" class="">A propos</a></li>
-        <li><a href=" " class="">Contact</a></li>
+        <li><a href="" className="{`navbar ${CurrentPage ? 'active':''}`}">A propos</a></li>
+        <li><a href=" " className="{`navbar ${CurrentPage ? 'active':''}`}">Contact</a></li>
         <li>
             {/* 
           @if(session('identifiant'))
             
-            <li class="dropdown" ><a href="#">   <span> {{session('identifiant') }}    </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-              <ul class="list_isolations">
+            <li className="dropdown" ><a href="#">   <span> {{session('identifiant') }}    </span> <i className="bi bi-chevron-down dropdown-indicator"></i></a>
+              <ul className="list_isolations">
                 <li><a href="{{ url('logout') }}">deconnection</a></li>
               </ul>
           </li>
           @else
-              <a href="{{ url('login')}}" class="{{ request()->is('login') ? 'active' : ''}}">
+              <a href="{{ url('login')}}" className="{{ request()->is('login') ? 'active' : ''}}">
             Login
               </a>
           @endif */}
@@ -56,7 +67,9 @@ function Navbar() {
     </div>
   </header>  
     </>
-  )
+    );
+  }
 }
+
 
 export default Navbar
