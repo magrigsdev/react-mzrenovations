@@ -1,53 +1,44 @@
 import React, { Component } from 'react'
 
-
 class Navbar extends Component {
 
-  render(){
+  render() {
     //get 
-    const {CurrentPage} = this.props
-   
-   
+    const { CurrentPage } = this.props
+
     return (
-      
+
       <>
-      <header id="header" className="header d-flex align-items-center">
-    <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
+        <header id="header" className="header d-flex align-items-center">
+          <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-    <a href="#" className="logo d-flex align-items-center">
-      {/* Uncomment the line below if you also wish to use an image logo  */}
-        {/* {{-- <!-- <img src="{{asset('assets/img/logo.png')}}" alt=""> --> --}} */}
-        <h1>MZ<span>renovation</span></h1>
-    </a>
+            <a href="#" className="logo d-flex align-items-center">
+              {/* Uncomment the line below if you also wish to use an image logo  */}
+              {/* {{-- <!-- <img src="{{asset('assets/img/logo.png')}}" alt=""> --> --}} */}
+              <h1>MZ<span>renovation</span></h1>
+            </a>
 
-    <i className="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-    <i className="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-    <nav id="navbar" className="navbar">
-      {/* Accueil */}
-        <ul>
-        <li><a href=""  className={`navbar ${CurrentPage ? 'active':''}`}> Accueil</a></li>
+            <i className="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i className="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+            <nav id="navbar" className="navbar">
+              {/* Accueil */}
+              <ul>
+                <li><a href="/" className={`navbar ${CurrentPage ? 'active' : ''}`}> Accueil</a></li>
+                <li><a href="/travaux" className="{`navbar ${CurrentPage ? 'active':''}`}">Travaux</a></li>
+                <li className="dropdown" ><a href="#"><span>Isolation</span> <i className="bi bi-chevron-down dropdown-indicator"></i></a>
+                  <ul className="list_isolations">
 
+                    <li><a href="">Murs</a></li>
+                    <li><a href="">Fenètres</a></li>
+                    <li><a href="">Toiture </a></li>
 
-        <li><a href="" className="{`navbar ${CurrentPage ? 'active':''}`}">Travaux</a></li>
-        
-        
-        <li><a href="" className="">isolation</a></li>
-          
-            <li className="dropdown" ><a href="#"><span>Isolation</span> <i className="bi bi-chevron-down dropdown-indicator"></i></a>
-              <ul className="list_isolations">
+                  </ul>
+                </li>
 
-              <li><a href="">Murs</a></li>           
-              <li><a href="">Fenètres</a></li>
-              <li><a href="">Toiture </a></li>
-
-              </ul>
-            </li>
-        
-
-        <li><a href="" className="{`navbar ${CurrentPage ? 'active':''}`}">A propos</a></li>
-        <li><a href=" " className="{`navbar ${CurrentPage ? 'active':''}`}">Contact</a></li>
-        <li>
-            {/* 
+                <li><a href="/apropos" to="/apropos" className="{`navbar ${CurrentPage ? 'active':''}`}">A propos</a></li>
+                <li><a href="/contact" className="{`navbar ${CurrentPage ? 'active':''}`}">Contact</a></li>
+                <li>
+                  {/* 
           @if(session('identifiant'))
             
             <li className="dropdown" ><a href="#">   <span> {{session('identifiant') }}    </span> <i className="bi bi-chevron-down dropdown-indicator"></i></a>
@@ -60,13 +51,15 @@ class Navbar extends Component {
             Login
               </a>
           @endif */}
-        </li>
-        </ul>
-    </nav>
+                </li>
+              </ul>
+            </nav>
 
-    </div>
-  </header>  
-    </>
+          </div>
+          {/* <Route exact pathname='/'  Component={Home}/> 
+    <Route pathname='/contact' Component={Contact} />  */}
+        </header>
+      </>
     );
   }
 }
