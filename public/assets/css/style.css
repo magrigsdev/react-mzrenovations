@@ -270,3 +270,8 @@ img{
 form{
     padding: 10px;
 }
+
+.mycard{
+    width: 18rem;
+    margin-top: 10px;
+}

@@ -243,26 +243,45 @@ export class Home extends Component {
     <section id="recent-blog-posts" className="recent-blog-posts">
       <div className="container" data-aos="fade-up">
 
-          <div className=" section-header">
+          <div className="section-header">
             
             <h2>Recents Travaux</h2>
                   
             <p>Les travaux réalisés par cette entreprise ont été exemplaires du début à la fin. Leur équipe qualifiée et dévouée a su gérer chaque aspect du projet avec expertise et professionnalisme. </p>
           
           </div>
-          <p>test   </p>
+        </div>
+      </section>   
 
           { 
             (() =>{if (this.state.data.status) 
               {
                 return <> { this.state.data.hasOwnProperty('data') ? 
                 (<>
-                data est la
-                {this.state.data.data.map((item, key) =>( 
+                {this.state.data.data.map((item) =>( 
                 <> 
-                <h1> {key} </h1>  
-                <h2> {item.date_debut} </h2>      
-                
+
+                  <div className='container-fluid'>
+                    <div className='row'>
+                        <div className='col-4'>
+                        <div class="card mycard">
+                              
+                              <div class="card-body">
+                                <h5 class="card-title">{item.titre} </h5>
+                                <p class="card-text">{item.description}</p>
+                                <a href="#" class="btn btn-info">{item.montants}</a>
+                              </div>
+
+                              <div class="card-footer border-success">
+                              <p class="card-text"><small class="text-body-secondary">{item.date_debut}</small></p>
+                              <p class="card-text"><small class="text-body-secondary">{item.date_fin}</small></p>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  
+                      
                  </>) )}
                 
                 </>
@@ -282,8 +301,7 @@ export class Home extends Component {
         
           
 
-      </div>
-    </section>
+      
   </main>
       </>
     )
