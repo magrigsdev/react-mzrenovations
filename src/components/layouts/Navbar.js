@@ -23,9 +23,11 @@ class Navbar extends Component {
             <nav id="navbar" className="navbar">
               {/* Accueil */}
               <ul>
-                <li><a href="/" className={`navbar ${CurrentPage ? 'active' : ''}`}> Accueil</a></li>
-                <li><a href="/travaux" className="{`navbar ${CurrentPage ? 'active':''}`}">Travaux</a></li>
-                <li className="dropdown" ><a href="#"><span>Isolation</span> <i className="bi bi-chevron-down dropdown-indicator"></i></a>
+                <li><a href="/" className={`navbar ${CurrentPage ==='Home' ? 'active' : ''}`}> Accueil</a></li>
+                <li><a href="/travaux" className={`navbar ${CurrentPage ==='Travaux' ? 'active':''}`}>Travaux</a></li>
+                <li><a href="/isolation" className={`navbar ${CurrentPage ==='Isolation' ? 'active':''}`}>Isolation</a></li>
+                
+                {/* <li className="dropdown" ><a href="#"><span>Isolation</span> <i className="bi bi-chevron-down dropdown-indicator"></i></a>
                   <ul className="list_isolations">
 
                     <li><a href="">Murs</a></li>
@@ -33,10 +35,10 @@ class Navbar extends Component {
                     <li><a href="">Toiture </a></li>
 
                   </ul>
-                </li>
+                </li> */}
 
-                <li><a href="/apropos" to="/apropos" className="{`navbar ${CurrentPage ? 'active':''}`}">A propos</a></li>
-                <li><a href="/contact" className="{`navbar ${CurrentPage ? 'active':''}`}">Contact</a></li>
+                <li><a href="/apropos"  className={`navbar ${CurrentPage ==='Apropos' ? 'active':''}`}>A propos</a></li>
+                <li><a href="/contact" className={`navbar ${CurrentPage  ==='Contact'? 'active':''}`}>Contact</a></li>
                 <li>
                   {/* 
           @if(session('identifiant'))
