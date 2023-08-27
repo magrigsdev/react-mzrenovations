@@ -275,3 +275,8 @@ form{
     width: 18rem;
     margin-top: 10px;
 }
+
+.mycardHorizontal{
+    max-width: 400px;
+   
+}

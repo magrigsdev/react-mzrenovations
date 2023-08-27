@@ -84,12 +84,14 @@ export class Home extends Component {
                       <div className="col-xl-5">
                         <div className="card-bg mur"></div>
                       </div>
+
                       <div className="col-xl-7 d-flex align-items-center">
                         <div className="card-body">
                           <h4 className="card-title">rénovation du mur.</h4>
                           <p>La rénovation du mur est une étape essentielle pour transformer l'apparence et l'ambiance d'une pièce. Que vous souhaitiez moderniser votre intérieur, réparer des dommages ou simplement apporter une touche de fraîcheur, la rénovation du mur peut faire toute la différence.</p>
                         </div>
                       </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -237,20 +239,62 @@ export class Home extends Component {
             </div>
           </section>
 
-
-          <section id="recent-blog-posts" className="recent-blog-posts">
+          <section id="services" className="services section-bg">
             <div className="container" data-aos="fade-up">
 
               <div className="section-header">
-
                 <h2>Recents Travaux</h2>
-
                 <p>Les travaux réalisés par cette entreprise ont été exemplaires du début à la fin. Leur équipe qualifiée et dévouée a su gérer chaque aspect du projet avec expertise et professionnalisme. </p>
-
               </div>
-            </div>
-          </section>
 
+              <div className="row gy-4">
+
+                {
+                  ( ()=>{
+                    if (this.state.data.status) {
+                      return <>
+                          {
+                            this.state.data.hasOwnProperty('data') ?
+
+                            (<> 
+                              {this.state.data.data.map((item) => (
+                                <>
+                                  <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                                      <div className="service-item position-relative">
+                                        <h3>{item.titre}</h3>
+                                        <h6> <i className="bi bi-calendar left"></i> {item.date_debut}</h6>
+                                        <h6> <i className="bi bi-calendar2 left"></i> {item.date_fin}</h6>
+                                        <h6> <i className="bi bi-person left"></i> </h6>
+                                        <p> {item.description} </p>
+                                        <a href="#" className="readmore stretched-link"> {item.montants}<i className="bi bi-currency-euro right"></i></a>
+                                      </div>
+                                    </div>
+                                </>
+                              ))}
+                            </>) :
+                            (<> <>
+                              <div className="alert alert-danger">
+                                  <strong>Desolé!</strong> la liste est vide
+                                </div>
+                              </>      </>)
+                          }
+                      </>
+                    }
+                    else {
+                      return <>
+                      <div className="alert alert-danger">
+                          <strong>Desolé!</strong> {this.state.data.message}
+                        </div>
+                      </>                   
+                    }
+                  }  )()
+                }
+                
+              </div>
+
+            </div>
+          </section>          
+{/* 
           {
             (() => {
               if (this.state.data.status) {
@@ -260,7 +304,7 @@ export class Home extends Component {
                       <>
 
                         <div className='container'>
-                          <div className='row'>
+                          <div className='column'>
 
                             <div className='col-md-4'>
                               <div class="card mycard">
@@ -298,9 +342,7 @@ export class Home extends Component {
                 </div>
               </>
             })()
-          }
-
-
+          } */}
         </main>
       </>
     )
