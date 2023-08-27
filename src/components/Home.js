@@ -137,7 +137,6 @@ export class Home extends Component {
             </div>
           </section>
 
-
           <section id="services" className="services section-bg">
             <div className="container" data-aos="fade-up">
 
@@ -147,9 +146,6 @@ export class Home extends Component {
               </div>
 
               <div className="row gy-4">
-
-
-
                 <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                   <div className="service-item position-relative">
                     <div className="icon">
@@ -157,7 +153,7 @@ export class Home extends Component {
                     </div>
                     <h3>Isolez vos murs</h3>
                     <p>La rénovation du mur est une étape essentielle pour transformer l'apparence et l'ambiance d'une pièce.</p>
-                    <a href=" " className="readmore stretched-link">plus <i className="bi bi-arrow-right"></i></a>
+                    <a href="isolation?murs" className="readmore stretched-link">allez <i className="bi bi-arrow-right"></i></a>
                   </div>
                 </div>
 
@@ -168,7 +164,7 @@ export class Home extends Component {
                     </div>
                     <h3>Isolez la toîture </h3>
                     <p>La rénovation de la toiture est une étape cruciale dans l'entretien et la préservation de votre bâtiment.</p>
-                    <a href="" className="readmore stretched-link">plus <i className="bi bi-arrow-right"></i></a>
+                    <a href="isolation?toîture" className="readmore stretched-link">allez <i className="bi bi-arrow-right"></i></a>
                   </div>
                 </div>
 
@@ -179,17 +175,14 @@ export class Home extends Component {
                     </div>
                     <h3>Isolez les Fenètres</h3>
                     <p>La rénovation des fenêtres apporte de nombreux avantages à votre maison.</p>
-                    <a href="" className="readmore stretched-link">plus <i className="bi bi-arrow-right"></i></a>
+                    <a href="isolation?Fenètres" className="readmore stretched-link">allez <i className="bi bi-arrow-right"></i></a>
                   </div>
                 </div>
-
-
 
               </div>
 
             </div>
           </section>
-
 
           <section id="alt-services" className="alt-services home_services">
             <div className="container" data-aos="fade-up">
@@ -257,26 +250,25 @@ export class Home extends Component {
                             this.state.data.hasOwnProperty('data') ?
 
                             (<> 
-                              {this.state.data.data.map((item) => (
+                              {this.state.data.data.map((item, value) => (
                                 <>
                                   <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                                      <div className="service-item position-relative">
+                                      <div className="service-item position-relative" key={value}>
                                         <h3>{item.titre}</h3>
                                         <h6> <i className="bi bi-calendar left"></i> {item.date_debut}</h6>
                                         <h6> <i className="bi bi-calendar2 left"></i> {item.date_fin}</h6>
-                                        <h6> <i className="bi bi-person left"></i> </h6>
                                         <p> {item.description} </p>
-                                        <a href="#" className="readmore stretched-link"> {item.montants}<i className="bi bi-currency-euro right"></i></a>
+                                        <span  className="readmore stretched-link"> {item.montants}<i className="bi bi-currency-euro right"></i></span>
                                       </div>
                                     </div>
                                 </>
                               ))}
                             </>) :
-                            (<> <>
+                            (<>
                               <div className="alert alert-danger">
-                                  <strong>Desolé!</strong> la liste est vide
-                                </div>
-                              </>      </>)
+                                  <strong>Desolé!</strong> {this.state.data.message}
+                              </div>
+                              </>)
                           }
                       </>
                     }
@@ -294,55 +286,7 @@ export class Home extends Component {
 
             </div>
           </section>          
-{/* 
-          {
-            (() => {
-              if (this.state.data.status) {
-                return <> {this.state.data.hasOwnProperty('data') ?
-                  (<>
-                    {this.state.data.data.map((item, value) => (
-                      <>
 
-                        <div className='container'>
-                          <div className='column'>
-
-                            <div className='col-md-4'>
-                              <div class="card mycard">
-
-                                <div class="card-body">
-                                  <h5 class="card-title">{item.titre} </h5>
-                                  <h5 class="card-title">{value} </h5>
-                                  <p class="card-text">{item.description}</p>
-                                  <a href="#" class="btn btn-info">{item.montants}</a>
-                                </div>
-
-                                <div class="card-footer border-success">
-                                  <p class="card-text"><small class="text-body-secondary">{item.date_debut}</small></p>
-                                  <p class="card-text"><small class="text-body-secondary">{item.date_fin}</small></p>
-                                </div>
-                              </div>
-                            </div>
-
-                          </div>
-                        </div>
-
-
-                      </>))}
-
-                  </>
-
-                  ) :
-                  (<>data no</>)}</>
-
-
-              }
-              else return <>
-                <div className="alert alert-danger">
-                  <strong>Desolé!</strong> {this.state.data.message}
-                </div>
-              </>
-            })()
-          } */}
         </main>
       </>
     )

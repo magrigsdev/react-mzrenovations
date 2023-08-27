@@ -1,35 +1,41 @@
 import React from 'react';
-import Navbar from './../layouts/Navbar';
+import Navbar from './../layouts/Navbar'
+import { useParams } from 'react-router-dom';
+
 
 
 
 class Isolation extends React.Component {
+     
     constructor(props) {
         super(props)
+        var get = props.location.search
         this.state = {
           data: [],
           name: "Isolation",
           message: "",
-          erreur: ""
+          erreur: "",
+                
         }
     }
 
     render() {
+   
         return <>
             <Navbar CurrentPage={this.state.name} />
             <main id="main">
 
     
                     <div class="breadcrumbs d-flex align-items-center Mybg">
-                    <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+                        <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-                        <h2 class="text-capitalize">  {this.state.name}</h2>
-                                <ol>
-                                    <li><a href="/">Accueil</a></li>
-                                <li class="text-capitalize">{this.state.name}</li>
-                                </ol>
-
-                    </div>
+                            <h2 class="text-capitalize">  {this.state.name}</h2>
+                            <h3 class="text-capitalize"> {get} </h3>
+                                    <ol>
+                                        <li><a href="/">Accueil</a></li>
+                                    <li class="text-capitalize">{this.state.name}</li>
+                                    </ol>
+                        </div>
                     </div> 
 
      

@@ -5,7 +5,7 @@ import Dashbord from './components/pages/Dashbord';
 import Travaux from './components/pages/Travaux';
 import Isolation from './components/pages/Isolation';
 import Apropos from './components/pages/Apropos';
-// import Page_404 from './components/Page_404';
+import Page_404 from './components/Page_404';
 
 
 function App(){
@@ -18,7 +18,9 @@ function App(){
                 <Route exact path="/isolation" element = { <Isolation /> } />
                 <Route exact path="/apropos" element = { <Apropos /> } />
                 <Route exact path="/dashbord" element = { <Dashbord /> } />
-                {/* <Route  element = { <Page_404 /> } /> */}
+                <Route  path ="*" element = { <Page_404 /> } />
+
+                <Route exact path="/isolation/:type" element = { <Isolation /> } />
             </Routes>
         </div>
     );
