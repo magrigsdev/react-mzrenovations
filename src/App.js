@@ -5,18 +5,20 @@ import Dashbord from './components/pages/Dashbord';
 import Travaux from './components/pages/Travaux';
 import Isolation from './components/pages/Isolation';
 import Apropos from './components/pages/Apropos';
+// import Page_404 from './components/Page_404';
 
 
 function App(){
     return (
         <div className="App">
             <Routes>
-                <Route path="/" element = { <Home /> } />
-                <Route path="/contact" element = { <Contact /> } />
-                <Route path="/travaux" element = { <Travaux /> } />
-                <Route path="/isolation" element = { <Isolation /> } />
-                <Route path="/apropos" element = { <Apropos /> } />
-                <Route path="/dashbord" element = { <Dashbord /> } />
+                <Route exact path="/" element = { <Home /> } />
+                <Route exact path="/contact" element = { <Contact /> } />
+                <Route exact path="/travaux" element = { <Travaux /> } />
+                <Route exact path="/isolation" element = { <Isolation /> } />
+                <Route exact path="/apropos" element = { <Apropos /> } />
+                <Route exact path="/dashbord" element = { <Dashbord /> } />
+                {/* <Route  element = { <Page_404 /> } /> */}
             </Routes>
         </div>
     );
