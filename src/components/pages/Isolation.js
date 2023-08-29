@@ -30,7 +30,7 @@ class Isolation extends React.Component {
                         <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
                             <h2 class="text-capitalize">  {this.state.name}</h2>
-                            <h3 class="text-capitalize"> {get} </h3>
+                            
                                     <ol>
                                         <li><a href="/">Accueil</a></li>
                                     <li class="text-capitalize">{this.state.name}</li>
